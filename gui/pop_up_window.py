@@ -1,7 +1,7 @@
 import tkinter as tk
 
 def ask_question(question,correct_answer):
-    is_correct = False
+    state = "failed"
 
     root = tk.Tk()
     root.title("Stop Procrastinating!!!")
@@ -13,14 +13,21 @@ def ask_question(question,correct_answer):
     input.pack(pady=10)
     
     def check_answer():
-        nonlocal is_correct
+        nonlocal state
         answer = input.get().strip()
         if (answer == correct_answer):
-            is_correct = True
+            state = "solved"
             root.destroy()
     
+    def give_up():
+        nonlocal state
+        root.destroy()
+    
     button = tk.Button(root,text="Check Answer", command=check_answer)
-    button.pack(pady=10)
+    button.pack(padx=20,pady=10)
+
+    button= tk.Button(root,text="I give up, Just close it", command=give_up)
+    button.pack(padx=20,pady=10)
 
     root.mainloop()
-    return is_correct
+    return state
