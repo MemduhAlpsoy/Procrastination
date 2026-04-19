@@ -7,7 +7,7 @@ def load_config():
     with open('config.json', 'r', encoding='utf-8') as f:
         return json.load(f)
     
-def start_listener():
+def start_listener(process_caught, window_caught):
     config = load_config()
     processes = config.get("target_processes", [])
     windows = config.get("target_windows", [])
@@ -16,8 +16,8 @@ def start_listener():
         captured_process = check_processes(processes)
         captured_window = check_windows(windows)
         if (captured_process):
-            print(captured_process)
+            process_caught(captured_process)
         if (captured_window):
-            print(captured_window)
+            window_caught(captured_window)
 
         time.sleep(2)
