@@ -6,6 +6,7 @@ def ask_question(question,correct_answer):
     root = tk.Tk()
     root.title("Stop Procrastinating!!!")
     root.attributes('-topmost', True)
+    root.attributes("-fullscreen", True)
     root.protocol("WM_DELETE_WINDOW", lambda: None)
     label = tk.Label(root,text=question)
     label.pack(pady=10)
@@ -17,6 +18,7 @@ def ask_question(question,correct_answer):
         answer = input.get().strip()
         if (answer == correct_answer):
             is_correct = True
+            print("Correct!")
             root.destroy()
     
     button = tk.Button(root,text="Check Answer", command=check_answer)
