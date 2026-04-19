@@ -25,6 +25,7 @@ def ask_question(question,correct_answer, target_name):
     
     def give_up():
         nonlocal state
+        state = "quit"
         root.destroy()
     
     button = tk.Button(root,text="Check Answer", command=check_answer)

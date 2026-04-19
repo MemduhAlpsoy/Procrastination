@@ -23,7 +23,7 @@ def handle_process(captured_process):
         freeze_process(pid)
         question,answer = derivative()
         is_correct = ask_question(question,answer,app_name)
-        if not is_correct:
+        if is_correct == "failed" or is_correct == "quit":
             psutil.Process(pid).kill()
         else:
             app_immunity_dictionary[app_name] = time.time()
