@@ -22,7 +22,7 @@ def handle_process(captured_process):
                 return
         freeze_process(pid)
         question,answer = derivative()
-        is_correct = ask_question(question,answer)
+        is_correct = ask_question(question,answer,app_name)
         if not is_correct:
             psutil.Process(pid).kill()
         else:
@@ -39,7 +39,7 @@ def handle_window(captured_window):
             return
     minimize_window(captured_window)
     question,answer = derivative()
-    is_correct = ask_question(question,answer)
+    is_correct = ask_question(question,answer,window_title)
     
     if (is_correct):
         window_immunity_dictionary[window_title] = time.time()

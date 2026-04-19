@@ -1,6 +1,6 @@
 import tkinter as tk
 
-def ask_question(question,correct_answer):
+def ask_question(question,correct_answer, target_name):
     is_correct = False
 
     root = tk.Tk()
@@ -8,8 +8,10 @@ def ask_question(question,correct_answer):
     root.attributes('-topmost', True)
     root.attributes("-fullscreen", True)
     root.protocol("WM_DELETE_WINDOW", lambda: None)
-    label = tk.Label(root,text=question)
-    label.pack(pady=10)
+    title_label = tk.Label(root,text=target_name, font=("Arial", 30, "bold"))
+    title_label.pack(side="top")
+    question_label = tk.Label(root,text=question,font=("Arial", 24))
+    question_label.pack(pady=10)
     input = tk.Entry(root)
     input.pack(pady=10)
     
