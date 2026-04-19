@@ -1,0 +1,8 @@
+{
+    "target_processes": [
+        "steam.exe"
+    ],
+    "target_windows": [
+        "Youtube"
+    ]
+}
