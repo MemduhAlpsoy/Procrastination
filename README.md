@@ -11,7 +11,8 @@ Solve it to earn "Immunity," or the system will mercilessly terminate your app!
 *  **Procedural Question Generator:** Zero hardcoded questions! Generates a completely new Polynomial Derivative problem with random coefficients and degrees upon every catch (featuring aesthetic Unicode exponent formatting: e.g., `4x³ + 2x`).
 *  **Interrogation Room (GUI):** A built-in, inescapable Tkinter interface that runs Fullscreen and "Always on Top," completely hiding your taskbar and other monitors.
 *  **Immunity System (Cooldown):** If you answer correctly, you are rewarded with a "Shield" that allows you to use that specific application freely for a designated period.
-*  **Lethal Penalty:** If you provide the wrong answer or attempt to cheat by bypassing the interface, your active program is instantly killed.
+* **Giving up** If you want to give up and end the interrogation, you can click the "Give Up" button, but be warned: it will immediately kill the offending application without any immunity or cooldown.
+*  **Lethal Penalty:** If you attempt to cheat by bypassing the interface, your active program is instantly killed.
 
 ## Project Architecture
 
@@ -28,7 +29,8 @@ The project consists of 4 isolated core modules and an Orchestrator (`main.py`):
 You need Python 3.x and the following libraries installed on your system:
 
 ```bash
-pip install psutil pygetwindow
+pip install psutil pygetwindow tkinter pyautogui
+```
 
 ### How to Run
 1.  Clone the repository:
